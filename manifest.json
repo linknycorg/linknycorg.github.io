@@ -1,0 +1,25 @@
+{
+  "name": "NYCWifiHub.com Free Wi-Fi Directory",
+  "short_name": "NYCWifiHub.com",
+  "description": "Premium independent directory for NYC public Gigabit and 5G infrastructure.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0c2340",
+  "theme_color": "#0c2340",
+  "orientation": "portrait-primary",
+  "id": "/index.html",
+  "icons": [
+    {
+      "src": "icon192.png",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon512.png",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

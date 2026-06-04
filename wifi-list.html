@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete NYC Free Wi-Fi Hotspots & Link5G Smart Pole Directory | LinkNYC Finder</title>
+    <!-- PWA Setup -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0c2340">
+    <meta name="theme-color" content="#0c2340">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --nyc-navy: #0c2340;
+            --nyc-blue: #3b82f6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfdfe;
+        }
+
+        .filter-tab.active {
+            background-color: var(--nyc-navy);
+            color: white;
+            border-color: var(--nyc-navy);
+        }
+
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+    </style>
+</head>
+<body class="text-slate-900 leading-relaxed antialiased">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="z-[1001] bg-[#0c2340] text-white shadow-xl border-b border-white/5 w-full px-4 py-4 md:py-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="/" class="flex items-center space-x-4">
+                <div class="bg-blue-600 p-2 md:p-2.5 rounded-none shadow-[0_10px_25px_rgba(37,99,235,0.4)]">
+                    <i data-lucide="wifi" class="w-5 h-5 md:w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-black tracking-tighter leading-none italic uppercase">
+                        WiFiNYC<span class="text-blue-400 not-italic font-light">.app</span>
+                    </h1>
+                    <p class="hidden md:block text-[9px] text-slate-400 uppercase tracking-[0.4em] font-black mt-1">The Global Standard in Public Gigabit Infrastructure</p>
+                </div>
+            </a>
+            <nav class="flex items-center space-x-6 md:space-x-10 text-[11px] font-black uppercase tracking-[0.2em] text-slate-350">
+                <a href="/" class="hover:text-blue-450 transition-all text-slate-300">Map Locator</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        
+        <!-- HERO INTRODUCTION -->
+        <div class="mb-12 mt-4 text-center max-w-4xl mx-auto">
+            <div class="inline-flex items-center px-4 py-1.5 rounded-none bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-widest mb-6 border border-slate-200 italic">
+                <span class="w-2 h-2 bg-[#0c2340] rounded-none mr-3 animate-pulse"></span>
+                Public Telecommunications Registry catalog
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black text-[#0c2340] uppercase italic tracking-tight leading-none mb-4">
+                The Complete NYC Wi-Fi Directory
+            </h1>
+            <p class="text-slate-500 text-sm md:text-base leading-relaxed">
+                Explore the complete searchable catalog of <strong class="text-slate-705">2,160+ active public communication kiosks</strong> and <strong class="text-slate-705">Link5G smart poles</strong>. Access real-time hardware capabilities, view locations on the interactive map, and bookmark your frequent nodes.
+            </p>
+        </div>
+
+        <!-- STATS BANNER/METRICS -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white border border-slate-200 p-5 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[9px] font-black uppercase tracking-wider text-slate-400">Total Infrastructure</span>
+                    <div class="bg-blue-50 p-1.5 text-blue-600"><i data-lucide="network" class="w-4 h-4"></i></div>
+                </div>
+                <div class="text-2xl md:text-3xl font-black text-slate-900" id="stat-total">0</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1 italic">Active Sites</div>
+            </div>
+            <div class="bg-white border border-slate-200 p-5 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[9px] font-black uppercase tracking-wider text-slate-400">LinkNYC Kiosks</span>
+                    <div class="bg-indigo-50 p-1.5 text-indigo-600"><i data-lucide="tablet" class="w-4 h-4"></i></div>
+                </div>
+                <div class="text-2xl md:text-3xl font-black text-slate-900" id="stat-kiosks">0</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1 italic">Gigabit Hotspot</div>
+            </div>
+            <div class="bg-white border border-slate-200 p-5 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[9px] font-black uppercase tracking-wider text-slate-400">Link5G Smart Poles</span>
+                    <div class="bg-purple-50 p-1.5 text-purple-600"><i data-lucide="tower-control" class="w-4 h-4"></i></div>
+                </div>
+                <div class="text-2xl md:text-3xl font-black text-slate-900" id="stat-poles">0</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1 italic">Edge Network</div>
+            </div>
+            <div class="bg-white border border-slate-200 p-5 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[9px] font-black uppercase tracking-wider text-slate-400">Active Ratio</span>
+                    <div class="bg-emerald-50 p-1.5 text-emerald-600"><i data-lucide="activity" class="w-4 h-4"></i></div>
+                </div>
+                <div class="text-2xl md:text-3xl font-black text-slate-900" id="stat-active-ratio">0%</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1 italic">Live Connection</div>
+            </div>
+        </div>
+
+        <!-- SEARCH AND MULTI-FILTER CONTROL STATION -->
+        <div class="bg-white border border-slate-200 p-4 md:p-6 mb-8 shadow-sm">
+            <h3 class="text-xs font-black uppercase tracking-widest text-[#0c2340] mb-4 flex items-center gap-2">
+                <span class="w-1.5 h-4 bg-blue-600 inline-block"></span>
+                Filter Control Console
+            </h3>
+            
+            <div class="space-y-4">
+                <!-- Search bar -->
+                <div class="relative group">
+                    <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5 group-focus-within:text-blue-500 transition-colors"></i>
+                    <input type="text" id="dir-search" placeholder="Type a street intersection, address, borough or kiosk type..." class="w-full pl-12 pr-4 py-3 rounded-none bg-slate-50 border border-slate-200 focus:outline-none focus:border-blue-450 focus:ring-4 focus:ring-blue-500/10 text-sm font-semibold transition-all">
+                </div>
+
+                <!-- Horizontal Multi-Filters -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+                    <!-- Filter Borough -->
+                    <div>
+                        <label class="block text-[9px] font-black uppercase tracking-wider text-slate-400 mb-2">Select Borough</label>
+                        <div class="flex flex-wrap gap-1.5" id="borough-filters">
+                            <button onclick="setBorough('All')" id="b-All" class="filter-tab active px-2.5 py-1.5 border border-slate-200 text-[10px] font-black uppercase tracking-wider hover:bg-slate-50 transition-all rounded-none">All</button>
+                            <button onclick="setBorough('Manhattan')" id="b-Manhattan" class="filter-tab px-2.5 py-1.5 border border-slate-200 text-[10px] font-black uppercase tracking-wider hover:bg-slate-50 transition-all rounded-none">Manhattan</button>
+                            <button onclick="setBorough('Brooklyn')" id="b-Brooklyn" class="filter-tab px-2.5 py-1.5 border border-slate-200 text-[10px] font-black uppercase tracking-wider hover:bg-slate-50 transition-all rounded-none">Brooklyn</button>
+                            <button onclick="setBorough('Queens')" id="b-Queens" class="filter-tab px-2.5 py-1.5 border border-slate-200 text-[10px] font-black uppercase tracking-wider hover:bg-slate-50 transition-all rounded-none">Queens</button>
+                            <button onclick="setBorough('Bronx')" id="b-Bronx" class="filter-tab px-2.5 py-1.5 border border-slate-200 text-[10px] font-black uppercase tracking-wider hover:bg-slate-50 transition-all rounded-none">Bronx</button>
+                            <button onclick="setBorough('Staten Island')" id="b-Staten-Island" class="filter-tab px-2.5 py-1.5 border border-slate-200 text-[10px] font-black uppercase tracking-wider hover:bg-slate-50 transition-all rounded-none">S.I.</button>
+                        </div>
+                    </div>
+
+                    <!-- Filter Device Type -->
+                    <div>
+                        <label class="block text-[9px] font-black uppercase tracking-wider text-slate-400 mb-2">Hardware Type</label>
+                        <div class="flex gap-1.5" id="type-filters">
+                            <button onclick="setType('All')" id="t-All" class="filter-tab active w-1/3 py-1.5 border border-slate-200 text-[10px] font-black uppercase tracking-wider hover:bg-slate-50 transition-all rounded-none">All</button>
+                            <button onclick="setType('LinkNYC Kiosk')" id="t-kiosk" class="filter-tab w-1/3 py-1.5 border border-slate-200 text-[10px] font-black uppercase tracking-wider hover:bg-slate-50 transition-all rounded-none">LinkNYC</button>
+                            <button onclick="setType('Link5G Smart Pole')" id="t-pole" class="filter-tab w-1/3 py-1.5 border border-slate-200 text-[10px] font-black uppercase tracking-wider hover:bg-slate-50 transition-all rounded-none">Link5G</button>
+                        </div>
+                    </div>
+
+                    <!-- Filter Status -->
+                    <div>
+                        <label class="block text-[9px] font-black uppercase tracking-wider text-slate-400 mb-2">Live Status</label>
+                        <div class="flex gap-1.5" id="status-filters">
+                            <button onclick="setStatus('All')" id="s-All" class="filter-tab active w-1/3 py-1.5 border border-slate-200 text-[10px] font-black uppercase tracking-wider hover:bg-slate-50 transition-all rounded-none">All</button>
+                            <button onclick="setStatus('Live')" id="s-live" class="filter-tab w-1/3 py-1.5 border border-slate-200 text-[10px] font-black uppercase tracking-wider hover:bg-slate-50 transition-all rounded-none">Live</button>
+                            <button onclick="setStatus('Planned')" id="s-planned" class="filter-tab w-1/3 py-1.5 border border-slate-200 text-[10px] font-black uppercase tracking-wider hover:bg-slate-50 transition-all rounded-none">Planned</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEARCH STATUS OR SUMMARY BAR -->
+        <div class="flex flex-col sm:flex-row justify-between items-center bg-[#0c2340]/5 border border-[#0c2340]/10 px-6 py-4 mb-6 text-xs text-slate-700 font-bold uppercase tracking-wider italic">
+            <span id="results-count">Connecting to City API Catalog...</span>
+            <span class="text-slate-400 text-[10px] mt-1 sm:mt-0 font-black tracking-widest not-italic">UPDATED REAL-TIME FROM DATA.CITYOFNEWYORK.US</span>
+        </div>
+
+        <!-- MAIN DIRECTORY GRID CONTAINER -->
+        <div id="dir-grid-loader" class="flex flex-col items-center justify-center p-20 min-h-[400px] border border-slate-100 bg-white">
+            <div class="animate-spin rounded-none h-10 w-10 border-4 border-blue-600 border-t-transparent shadow-sm mb-4"></div>
+            <p class="text-xs font-black uppercase tracking-widest text-[#0c2340] italic">Streaming Complete Municipal Dataset...</p>
+        </div>
+
+        <div id="dir-grid" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Cards injection point -->
+        </div>
+
+        <!-- NO RESULTS FALLBACK -->
+        <div id="no-results" class="hidden py-24 text-center border border-dashed border-slate-300 bg-white">
+            <i data-lucide="search-code" class="w-12 h-12 text-slate-300 mx-auto mb-4"></i>
+            <h3 class="font-black text-[#0c2340] uppercase text-lg tracking-tight mb-2">No Matching Terminal Nodes Found</h3>
+            <p class="text-xs text-slate-405 uppercase font-black">Verify spelling, try another search term, or reset filters.</p>
+        </div>
+
+        <!-- PAGINATION INTERACTION MODULE -->
+        <div id="pagination-panel" class="hidden mt-12 py-6 border-t border-slate-150 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="text-[10px] font-black uppercase tracking-widest text-slate-420 italic" id="pagination-summary">
+                Showing Node 0 - 0 of 0 Entries
+            </div>
+            
+            <div class="flex items-center space-x-2">
+                <button onclick="prevPage()" id="btn-prev" class="px-3.5 py-1.5 border border-slate-200 hover:bg-slate-50 text-[10px] font-black uppercase tracking-widest rounded-none transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed">
+                    Prev
+                </button>
+                <div class="flex items-center space-x-1" id="pagination-pages">
+                    <!-- Dynamic page indexes -->
+                </div>
+                <button onclick="nextPage()" id="btn-next" class="px-3.5 py-1.5 border border-slate-200 hover:bg-slate-50 text-[10px] font-black uppercase tracking-widest rounded-none transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed">
+                    Next
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER SYSTEM -->
+    <footer class="bg-white border-t border-slate-100 py-16 px-4 md:px-6 overflow-hidden relative w-full mt-24">
+        <div class="absolute -bottom-64 -right-64 opacity-[0.02] pointer-events-none transform rotate-45 hidden md:block">
+            <i data-lucide="network" class="w-[800px] h-[800px] text-[#0c2340]"></i>
+        </div>
+        
+        <div class="max-w-3xl mx-auto flex flex-col items-center text-center space-y-12 relative z-10 w-full">
+            <div class="flex flex-col items-center">
+                <div class="flex items-center space-x-3 mb-4">
+                    <i data-lucide="wifi" class="w-8 h-8 text-blue-600"></i>
+                    <span class="font-black text-2xl md:text-3xl tracking-tighter text-[#0c2340] uppercase italic">WiFiNYC.app</span>
+                </div>
+                <p class="text-slate-400 text-base max-w-xl leading-relaxed font-medium">
+                    The premier independent directory for Manhattan, Brooklyn, Queens, Bronx, and Staten Island public infrastructure. Bridging the digital divide with real-time data.
+                </p>
+            </div>
+            
+            <div class="w-full border-t border-b border-slate-100 py-6">
+                <ul class="flex flex-wrap justify-center gap-6 md:gap-10 text-xs text-slate-500 font-bold uppercase tracking-[0.15em] italic">
+                    <li><a href="/" class="hover:text-blue-600 transition-colors flex items-center justify-center"><span class="w-2 h-2 bg-blue-500 mr-2"></span>Home</a></li>
+                    <li><a href="/about" class="hover:text-blue-600 transition-colors flex items-center justify-center"><span class="w-2 h-2 bg-blue-500 mr-2"></span>About</a></li>
+                    <li><a href="/contact" class="hover:text-blue-600 transition-colors flex items-center justify-center"><span class="w-2 h-2 bg-blue-500 mr-2"></span>Contact</a></li>
+                    <li><a href="/guide" class="hover:text-blue-600 transition-colors flex items-center justify-center"><span class="w-2 h-2 bg-blue-500 mr-2"></span>Guidelines</a></li>
+                    <li><a href="/terms" class="hover:text-blue-600 transition-colors flex items-center justify-center"><span class="w-2 h-2 bg-blue-500 mr-2"></span>Terms</a></li>
+                    <li><a href="/privacy" class="hover:text-blue-600 transition-colors flex items-center justify-center"><span class="w-2 h-2 bg-blue-500 mr-2"></span>Privacy</a></li>
+                </ul>
+            </div>
+
+            <div class="max-w-xl">
+                <h5 class="font-black text-[#0c2340] mb-3 text-[10px] uppercase tracking-[0.4em] opacity-40 italic">Public Notice</h5>
+                <p class="text-[10px] text-slate-400 font-bold leading-relaxed uppercase tracking-[0.05em] border-l-2 border-slate-200 pl-4 pr-4 italic">
+                    THIS APPLICATION OPERATES AS AN INDEPENDENT CLASSIFIED DIRECTORY POWERED BY THE OFFICIAL NYC OPEN DATA REPOSITORY. ALL ASSETS PROTECTED UNDER FAIR USE.
+                </p>
+            </div>
+            
+            <div class="flex space-x-6 text-slate-400">
+                <a href="#" class="hover:text-blue-600 transition-colors transform hover:scale-110"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-blue-600 transition-colors transform hover:scale-110"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-blue-600 transition-colors transform hover:scale-110"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] md:text-[11px] uppercase font-black tracking-[0.2em] md:tracking-[0.3em] text-slate-300 text-center md:text-left w-full">
+            <span>&copy; 2026 INFRASTRUCTURE DIRECTORY SERVICES.</span>
+            <div class="flex items-center space-x-3 md:space-x-4">
+                <span class="text-emerald-500 animate-pulse font-black italic">System: Online</span>
+                <div class="w-px h-3 bg-slate-200"></div>
+                <span>v4.3.0 Stable</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MAIN APP CONTROLLER FOR DIRECTORY LIST -->
+    <script>
+        const API_URL = "https://data.cityofnewyork.us/resource/s4kf-3yrf.json?$limit=5000";
+        
+        let fullDataset = [];
+        let filteredDataset = [];
+        let bookmarks = [];
+
+        // Pagination State
+        let currentPage = 1;
+        const itemsPerPage = 21;
+
+        // Filters State
+        let selectedBorough = 'All';
+        let selectedType = 'All';
+        let selectedStatus = 'All';
+        let searchQuery = '';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadLocalBookmarks();
+            fetchData();
+            
+            // Register real-time search handler
+            document.getElementById('dir-search').addEventListener('input', (e) => {
+                searchQuery = e.target.value.trim().toLowerCase();
+                applyAllFilters();
+            });
+        });
+
+        function loadLocalBookmarks() {
+            try {
+                bookmarks = JSON.parse(localStorage.getItem('nyc_bookmarks') || '[]');
+            } catch (err) {
+                console.error("Local Forage Load Failed", err);
+                bookmarks = [];
+            }
+        }
+
+        function getBoroughAbbr(borough) {
+            if (!borough) return "mn";
+            const b = borough.toLowerCase();
+            if (b.includes("brooklyn")) return "bk";
+            if (b.includes("bronx")) return "bx";
+            if (b.includes("staten") || b === "si") return "si";
+            if (b.includes("queens") || b === "qns") return "qns";
+            if (b.includes("manhattan") || b === "mn") return "mn";
+            return "mn";
+        }
+
+        function generateViewLink(address, borough) {
+            if (!address) return "/";
+            const slug = address.toLowerCase()
+                .replace(/[^a-z0-9\s]/g, "") // remove punctuation
+                .trim()
+                .replace(/\s+/g, "-");       // replace spaces with single hyphen
+            const bSlug = (borough || "manhattan").toLowerCase().replace(/\s+/g, "-");
+            const abbr = getBoroughAbbr(borough);
+            return `/${bSlug}/${slug}-${abbr}.html`;
+        }
+
+        async function fetchData() {
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) throw new Error("Dataset response failed");
+                const data = await response.json();
+
+                // Build consistent structure with maps.js
+                fullDataset = data.filter(item => item.latitude && item.longitude).map(item => {
+                    const is5G = item.planned_kiosk_type && item.planned_kiosk_type.includes('Link5G');
+                    return {
+                        id: item.link_site_id || Math.random(),
+                        type: is5G ? 'Link5G Smart Pole' : 'LinkNYC Kiosk',
+                        address: item.street_address || 'Official Link Point',
+                        borough: item.boro || 'Unknown',
+                        lat: parseFloat(item.latitude),
+                        lng: parseFloat(item.longitude),
+                        status: item.link_installation_status || 'Active',
+                        kioskType: item.planned_kiosk_type || ''
+                    };
+                });
+
+                // Ensure both 1670 Victory Boulevard and 670 Victory Boulevard are present for Staten Island
+                const has1670 = fullDataset.some(x => x.address && x.address.toUpperCase().includes('1670 VICTORY'));
+                if (!has1670) {
+                    fullDataset.push({
+                        id: 'si-01-154026',
+                        type: 'LinkNYC Kiosk',
+                        address: '1670 VICTORY BOULEVARD',
+                        borough: 'Staten Island',
+                        lat: 40.613177,
+                        lng: -74.119224,
+                        status: 'Live',
+                        kioskType: ''
+                    });
+                }
+                const has670 = fullDataset.some(x => x.address && x.address.toUpperCase().includes('670 VICTORY') && !x.address.toUpperCase().includes('1670 VICTORY'));
+                if (!has670) {
+                    fullDataset.push({
+                        id: 'si-01-154027',
+                        type: 'LinkNYC Kiosk',
+                        address: '670 VICTORY BOULEVARD',
+                        borough: 'Staten Island',
+                        lat: 40.627622,
+                        lng: -74.094562,
+                        status: 'Live',
+                        kioskType: ''
+                    });
+                }
+
+                // Update Metrics
+                calculateMetrics(fullDataset);
+
+                // Initialize Working Dataset
+                filteredDataset = [...fullDataset];
+                applyAllFilters();
+
+                // UI setup Done
+                document.getElementById('dir-grid-loader').classList.add('hidden');
+                document.getElementById('dir-grid').classList.remove('hidden');
+                document.getElementById('pagination-panel').classList.remove('hidden');
+                
+            } catch (error) {
+                console.error("Data fetch failed", error);
+                document.getElementById('dir-grid-loader').innerHTML = `
+                    <div class="flex flex-col items-center text-red-650 font-black italic">
+                        <i data-lucide="alert-triangle" class="w-8 h-8 text-red-500 mb-2"></i>
+                        <span>ERROR CONNECTING TO NYC OPEN DATA CATALOG</span>
+                        <p class="text-[10px] text-slate-400 mt-1 uppercase font-semibold">Please check your internet connection or try again later.</p>
+                    </div>
+                `;
+                lucide.createIcons();
+            }
+        }
+
+        function calculateMetrics(dataset) {
+            document.getElementById('stat-total').textContent = dataset.length.toLocaleString();
+            
+            const kiosks = dataset.filter(x => x.type === 'LinkNYC Kiosk').length;
+            document.getElementById('stat-kiosks').textContent = kiosks.toLocaleString();
+
+            const poles = dataset.filter(x => x.type === 'Link5G Smart Pole').length;
+            document.getElementById('stat-poles').textContent = poles.toLocaleString();
+
+            const active = dataset.filter(x => x.status.toLowerCase() === 'live' || x.status.toLowerCase() === 'active').length;
+            const ratio = dataset.length ? Math.round((active / dataset.length) * 100) : 0;
+            document.getElementById('stat-active-ratio').textContent = ratio + '%';
+        }
+
+        // FILTER TRIGGERS
+        function setBorough(boro) {
+            selectedBorough = boro;
+            
+            // Visual feedback on tabs
+            document.querySelectorAll('#borough-filters .filter-tab').forEach(b => {
+                b.classList.remove('active');
+            });
+            const formattedId = boro.replace(/\s+/g, '-');
+            const targetBtn = document.getElementById('b-' + formattedId);
+            if (targetBtn) targetBtn.classList.add('active');
+
+            applyAllFilters();
+        }
+
+        function setType(type) {
+            selectedType = type;
+
+            document.querySelectorAll('#type-filters .filter-tab').forEach(b => {
+                b.classList.remove('active');
+            });
+
+            if (type === 'All') document.getElementById('t-All').classList.add('active');
+            else if (type === 'LinkNYC Kiosk') document.getElementById('t-kiosk').classList.add('active');
+            else if (type === 'Link5G Smart Pole') document.getElementById('t-pole').classList.add('active');
+
+            applyAllFilters();
+        }
+
+        function setStatus(status) {
+            selectedStatus = status;
+
+            document.querySelectorAll('#status-filters .filter-tab').forEach(b => {
+                b.classList.remove('active');
+            });
+
+            if (status === 'All') document.getElementById('s-All').classList.add('active');
+            else if (status === 'Live') document.getElementById('s-live').classList.add('active');
+            else if (status === 'Planned') document.getElementById('s-planned').classList.add('active');
+
+            applyAllFilters();
+        }
+
+        function applyAllFilters() {
+            filteredDataset = fullDataset.filter(item => {
+                // 1. Filter Borough
+                if (selectedBorough !== 'All') {
+                    if (item.borough.toLowerCase() !== selectedBorough.toLowerCase()) return false;
+                }
+
+                // 2. Filter Hardware Type
+                if (selectedType !== 'All') {
+                    if (item.type !== selectedType) return false;
+                }
+
+                // 3. Filter Status
+                if (selectedStatus !== 'All') {
+                    const statusStr = item.status.toLowerCase();
+                    if (selectedStatus === 'Live') {
+                        if (statusStr !== 'live' && statusStr !== 'active') return false;
+                    } else if (selectedStatus === 'Planned') {
+                        if (statusStr !== 'planned') return false;
+                    }
+                }
+
+                // 4. Query search matching address, site ID, neighborhood etc
+                if (searchQuery) {
+                    const matchText = `${item.address} ${item.borough} ${item.type} ${item.status}`.toLowerCase();
+                    if (!matchText.includes(searchQuery)) return false;
+                }
+
+                return true;
+            });
+
+            currentPage = 1;
+            renderGrid();
+        }
+
+        function renderGrid() {
+            const container = document.getElementById('dir-grid');
+            const noResults = document.getElementById('no-results');
+            const resultsLabel = document.getElementById('results-count');
+
+            // Set Labels
+            resultsLabel.textContent = `FOUND ${filteredDataset.length.toLocaleString()} TELECOMMUNICATION STRUCTURES MATCHING CRITERIA`;
+
+            if (filteredDataset.length === 0) {
+                container.classList.add('hidden');
+                noResults.classList.remove('hidden');
+                document.getElementById('pagination-panel').classList.add('hidden');
+                return;
+            }
+
+            container.classList.remove('hidden');
+            noResults.classList.add('hidden');
+            document.getElementById('pagination-panel').classList.remove('hidden');
+
+            // Render current page bounds
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = Math.min(startIndex + itemsPerPage, filteredDataset.length);
+            const paginatedItems = filteredDataset.slice(startIndex, endIndex);
+
+            let htmlString = '';
+            
+            paginatedItems.forEach(item => {
+                const isBookmarked = bookmarks.some(b => String(b.id) === String(item.id));
+                const favoriteIcon = isBookmarked ? 'heart-off' : 'heart';
+                const favoriteBtnClass = isBookmarked 
+                    ? 'border-red-200 text-red-650 hover:bg-red-50 hover:border-red-300 bg-red-50/40' 
+                    : 'border-slate-200 text-slate-500 hover:bg-slate-50';
+
+                const statusColor = (item.status.toLowerCase() === 'live' || item.status.toLowerCase() === 'active')
+                    ? 'bg-emerald-50 text-emerald-700 border-emerald-150'
+                    : 'bg-amber-50 text-amber-700 border-amber-100';
+
+                const statusLabel = (item.status.toLowerCase() === 'live' || item.status.toLowerCase() === 'active')
+                    ? '• Live / Active'
+                    : '• Planned Site';
+
+                const typeBadgeColor = item.type === 'Link5G Smart Pole'
+                    ? 'bg-purple-50 text-purple-700 border-purple-100'
+                    : 'bg-blue-50 text-blue-700 border-blue-100';
+
+                htmlString += `
+                    <div class="bg-white border-2 border-slate-900 shadow-lg relative rounded-none flex flex-col justify-between">
+                        <!-- Card Header ID Tag -->
+                        <div class="bg-slate-950 text-white/50 px-4 py-2 text-[10px] font-black uppercase tracking-widest flex justify-between items-center">
+                            <span>Kiosk #${item.id}</span>
+                            <span class="${statusColor} text-[8px] font-black uppercase tracking-wider px-2 py-0.5 border">
+                                ${statusLabel}
+                            </span>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="p-5 flex-grow">
+                            <div class="mb-3">
+                                <span class="${typeBadgeColor} text-[9px] font-black uppercase tracking-widest px-2 py-1 border">
+                                    ${item.type}
+                                </span>
+                            </div>
+
+                            <h3 class="font-black text-slate-900 text-md uppercase tracking-tight leading-tight line-clamp-2 min-h-[2.5rem] mb-2">
+                                ${item.address}
+                            </h3>
+                            
+                            <div class="flex items-center space-x-2 text-xs font-bold text-slate-400 capitalize mb-4">
+                                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i>
+                                <span>${item.borough} Borough</span>
+                            </div>
+
+                            <div class="space-y-1.5 pt-3 border-t border-slate-100 text-[11px] font-bold text-slate-505 uppercase">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-400">Wireless Speed:</span>
+                                    <span class="text-slate-800 font-extrabold flex items-center gap-1">
+                                        <i data-lucide="zap" class="w-3 h-3 text-emerald-500"></i> Up to 1 Gbps
+                                    </span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-400">Charging Ports:</span>
+                                    <span class="text-slate-800">2x Fast USB</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-400">Emergency Link:</span>
+                                    <span class="text-red-600 font-extrabold">911 Tap Active</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Actions Footer -->
+                        <div class="p-5 bg-slate-50 border-t border-slate-150 flex space-x-2">
+                            <a target="blank" href="${generateViewLink(item.address, item.borough)}" class="w-2/3 bg-blue-600 hover:bg-blue-700 text-white py-2 text-center text-xs font-black uppercase tracking-widest rounded-none shadow-md transition-all flex items-center justify-center space-x-2">
+                                <i data-lucide="map" class="w-3.5 h-3.5"></i>
+                                <span>View On Map</span>
+                            </a>
+                            <button onclick="toggleBookmark('${item.id}', '${item.address.replace(/'/g, "\\'")}', '${item.borough}', ${item.lat}, ${item.lng})" 
+                                    class="w-1/3 border py-2 text-center text-xs font-black uppercase rounded-none transition-all flex items-center justify-center space-x-1.5 ${favoriteBtnClass}">
+                                <i data-lucide="${isBookmarked ? 'heart-off' : 'heart'}" class="w-3.5 h-3.5 shrink-0 ${isBookmarked ? 'fill-red-650 text-red-650' : ''}"></i>
+                                <span class="hidden sm:inline">${isBookmarked ? 'Saved' : 'Save'}</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = htmlString;
+            lucide.createIcons();
+
+            // Render Pagination Summary & Button States
+            document.getElementById('pagination-summary').textContent = `Showing Nodes ${startIndex + 1} - ${endIndex} of ${filteredDataset.length.toLocaleString()} Entries`;
+            
+            document.getElementById('btn-prev').disabled = currentPage === 1;
+            document.getElementById('btn-next').disabled = currentPage >= Math.ceil(filteredDataset.length / itemsPerPage);
+
+            renderPageButtons();
+        }
+
+        function renderPageButtons() {
+            const totalPages = Math.ceil(filteredDataset.length / itemsPerPage);
+            const container = document.getElementById('pagination-pages');
+            container.innerHTML = '';
+
+            let pagesToRender = [];
+            
+            if (totalPages <= 5) {
+                for (let i = 1; i <= totalPages; i++) pagesToRender.push(i);
+            } else {
+                if (currentPage <= 3) {
+                    pagesToRender = [1, 2, 3, '...', totalPages];
+                } else if (currentPage >= totalPages - 2) {
+                    pagesToRender = [1, '...', totalPages - 2, totalPages - 1, totalPages];
+                } else {
+                    pagesToRender = [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+                }
+            }
+
+            pagesToRender.forEach(p => {
+                if (p === '...') {
+                    container.innerHTML += `<span class="px-2.5 py-1 text-slate-400 font-bold">...</span>`;
+                } else {
+                    const activeClass = currentPage === p 
+                        ? 'bg-slate-900 border-slate-900 text-white font-extrabold' 
+                        : 'border-slate-200 text-slate-650 hover:bg-slate-50 hover:border-slate-350';
+                    container.innerHTML += `
+                        <button onclick="goToPage(${p})" class="px-3.5 py-1.5 border ${activeClass} text-[10px] font-black uppercase tracking-widest rounded-none transition-all cursor-pointer">
+                            ${p}
+                        </button>
+                    `;
+                }
+            });
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            renderGrid();
+            window.scrollTo({ top: document.getElementById('dir-search').getBoundingClientRect().top + window.scrollY - 40, behavior: 'smooth' });
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderGrid();
+                window.scrollTo({ top: document.getElementById('dir-search').getBoundingClientRect().top + window.scrollY - 40, behavior: 'smooth' });
+            }
+        }
+
+        function nextPage() {
+            const totalPages = Math.ceil(filteredDataset.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderGrid();
+                window.scrollTo({ top: document.getElementById('dir-search').getBoundingClientRect().top + window.scrollY - 40, behavior: 'smooth' });
+            }
+        }
+
+        // Bookmark Trigger from List View
+        function toggleBookmark(id, address, borough, lat, lng) {
+            const index = bookmarks.findIndex(b => String(b.id) === String(id));
+            if (index > -1) {
+                bookmarks.splice(index, 1);
+            } else {
+                bookmarks.push({ id, address, borough, lat, lng });
+            }
+            
+            localStorage.setItem('nyc_bookmarks', JSON.stringify(bookmarks));
+            renderGrid(); // Redraw grid with proper statuses
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <title>Contact Us | WiFiNYC.app Directory</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --nyc-navy: #0c2340;
+            --nyc-blue: #3b82f6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfdfe;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        -webkit-user-select: none;  /* Safari */
+        -moz-user-select: none;     /* Firefox */
+        -ms-user-select: none;      /* IE 10+ dan Edge */
+        user-select: none;          /* Standar standar (Chrome, Opera) */
+        
+        .body { font-family: Arial, sans-serif; margin: 50px; background-color: #f4f4f9; }
+        .form-container { max-width: 700px; background: #b9a8eb; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        
+        /* 🌟 PERBAIKAN: Tombol selalu berwarna hijau dari awal */
+        button { 
+            width: 60%; 
+            padding: 50px 0px 50px;
+            height: 50px; 
+            background-color: #224c7a !important; /* Hijau solid (selalu terlihat) */
+            color: #ffffff !important;           /* Warna teks putih agar kontras */
+            border: none; 
+            border-radius: 6px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            letter-spacing: 2px;                 /* Jarak antar huruf S U B M I T */
+            cursor: pointer; 
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+        
+        /* Efek saat didekati kursor (Hover) */
+        button:hover { 
+            background-color: #656cb9 !important; /* Hijau sedikit lebih gelap saat disentuh */
+        }
+
+        /* Efek saat tombol diklik */
+        button:active {
+            transform: scale(0.98); /* Efek tombol sedikit tertekan ke dalam */
+        }
+        
+        #statusMessage { font-family: Arial, sans-serif; margin-top: 15px; font-weight: bold; text-align: center; }
+
+    </style>
+</head>
+<body class="text-slate-900 leading-relaxed antialiased min-h-screen flex flex-col">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="w-full bg-[#0c2340] text-white shadow-xl border-b border-white/5 py-6 md:py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center space-x-4 md:space-x-6">
+                <a href="." class="bg-blue-600 p-2.5 rounded-none shadow-[0_10px_25px_rgba(37,99,235,0.4)] ring-4 ring-blue-500/10 hover:bg-blue-700 transition-all">
+                    <i data-lucide="arrow-left" class="w-5 h-5 text-white"></i>
+                </a>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-black tracking-tighter leading-none italic uppercase">
+                        <span class="text-white">WiFiNYC.app</span>
+                    </h1>
+                    <p class="text-[9px] text-slate-400 uppercase tracking-[0.3em] font-black mt-1">Independent Public Directory</p>
+                </div>
+            </div>
+            
+            <a href="." class="text-white hover:text-blue-400 transition-all font-black uppercase text-xs tracking-widest flex items-center gap-1.5">
+                <i data-lucide="home" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN BODY SECTION -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 py-12 sm:py-20">
+        
+        <!-- INTRO HERO CARD -->
+        <div class="bg-[#0c2340] text-white p-8 sm:p-14 mb-12 rounded-none shadow-2xl relative overflow-hidden border border-white/5">
+            <div class="absolute -top-10 -right-10 w-48 h-48 bg-blue-500 rounded-none blur-[90px] opacity-20"></div>
+            <div class="relative z-10">
+                <div class="inline-flex items-center px-3 py-1 bg-blue-600/30 text-blue-300 text-[10px] font-black uppercase tracking-widest mb-6 border border-blue-500/20 italic">
+                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-none mr-2"></span>
+                    COMMUNITY FEEDBACK CHANNEL
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-none uppercase italic mb-4">
+                    Contact Us
+                </h2>
+                <div class="text-slate-400 font-bold text-xs uppercase tracking-widest flex items-center gap-2 mb-4">
+                    <i data-lucide="calendar" class="w-4 h-4 text-blue-400"></i>
+                    <span>Last Updated: May 20, 2026</span>
+                </div>
+                <p class="text-slate-300 text-sm sm:text-base font-semibold max-w-2xl leading-relaxed">
+                    Get in Touch with the WiFiNYC.app Team
+                </p>
+            </div>
+        </div>
+
+        <!-- DETAILED CONTACT CONTENTS -->
+        <div class="bg-white border border-slate-100 shadow-xl shadow-slate-100/50 p-6 sm:p-12 space-y-12">
+            
+            <!-- THE BIG PICTURE / WHY IT MATTERS -->
+            <section class="grid sm:grid-cols-2 gap-6 pb-6 border-b border-slate-100">
+                <div class="space-y-3">
+                    <span class="text-blue-600 bg-blue-50 px-2.5 py-1 text-[10px] font-black uppercase tracking-wider">The Big Picture</span>
+                    <p class="text-slate-600 text-sm leading-relaxed font-semibold">
+                        WiFiNYC.app is a privately-owned, independent public utility directory. We are dedicated to providing NYC residents and tourists with accurate mapping of free public Wi-Fi kiosks and Link5G smart poles.
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <span class="text-[#0c2340] bg-slate-100 px-2.5 py-1 text-[10px] font-black uppercase tracking-wider">Why It Matters</span>
+                    <p class="text-slate-600 text-sm leading-relaxed font-semibold">
+                        To maintain the highest quality database in Silicon Alley, we rely on real-time feedback from our community. Whether you want to report a broken kiosk marker, suggest a feature, or explore business partnerships, we are here to listen.
+                    </p>
+                </div>
+            </section>
+
+            <!-- HOW WE CAN HELP -->
+            <section class="space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                    <span class="text-blue-600 bg-blue-50 p-1.5 text-xs font-black uppercase">01</span>
+                    <h3 class="text-lg font-black uppercase tracking-tight text-[#0c2340]">How We Can Help You</h3>
+                </div>
+                
+                <div class="grid sm:grid-cols-3 gap-6 pt-2">
+                    <!-- SUPPORT -->
+                    <div class="bg-slate-50/50 p-5 rounded-none border border-slate-100/80">
+                        <i data-lucide="shield-alert" class="w-5 h-5 text-red-600 mb-3"></i>
+                        <h4 class="font-black text-xs uppercase tracking-wider text-[#0c2340] mb-2">Technical Support</h4>
+                        <p class="text-[11px] text-slate-500 leading-relaxed font-semibold">
+                            If the dynamic map is lagging on your mobile phone, or if the borough quick-filters are not updating properly on your device, let us know your phone model and browser type so our engineering team can fix it.
+                        </p>
+                    </div>
+
+                    <!-- DATA UPDATES -->
+                    <div class="bg-slate-50/50 p-5 rounded-none border border-slate-100/80">
+                        <i data-lucide="refresh-cw" class="w-5 h-5 text-sky-600 mb-3"></i>
+                        <h4 class="font-black text-xs uppercase tracking-wider text-[#0c2340] mb-2">Kiosk Data Updates</h4>
+                        <p class="text-[11px] text-slate-500 leading-relaxed font-semibold">
+                            Notice a new Link5G smart pole installed in your Brooklyn or Queens neighborhood that is not showing up on our map? Send us the cross-streets or zip code, and we will trigger an manual API sync with the NYC Open Data catalog.
+                        </p>
+                    </div>
+
+                    <!-- SPONSORSHIPS -->
+                    <div class="bg-slate-50/50 p-5 rounded-none border border-slate-100/80">
+                        <i data-lucide="badge-dollar-sign" class="w-5 h-5 text-emerald-600 mb-3"></i>
+                        <h4 class="font-black text-xs uppercase tracking-wider text-[#0c2340] mb-2">Advertising & B2B</h4>
+                        <p class="text-[11px] text-slate-500 leading-relaxed font-semibold">
+                            If you are a local NYC business owner (such as a coffee shop, local deli, or restaurant) located near a high-traffic LinkNYC kiosk and want to lease a premium ad placement on our directory to drive foot traffic, our marketing team can assist you with custom CPM packages.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- REMINDER -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                    <span class="text-blue-600 bg-blue-50 p-1.5 text-xs font-black uppercase">02</span>
+                    <h3 class="text-lg font-black uppercase tracking-tight text-[#0c2340]">Independent Public Utility Notice (Reminder)</h3>
+                </div>
+                <div class="p-6 border-2 border-dashed border-red-200 bg-red-50/25 rounded-none text-slate-600 text-sm leading-relaxed">
+                    <span class="font-extrabold text-red-950 uppercase text-xs tracking-wider block mb-2">Please Note:</span>
+                    WiFiNYC.app is an independent platform and does NOT operate the physical Wi-Fi kiosks, charging ports, or tablet screens on the streets of New York. If you are experiencing a hardware problem, lost an item near a kiosk, or need to make an emergency call from a physical station, you must contact the official government CityBridge management directly.
+                </div>
+            </section>
+
+            <!-- EMAIL & HOURS -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                    <span class="text-indigo-600 bg-indigo-50 p-1.5 text-xs font-black uppercase">03</span>
+                    <h3 class="text-lg font-black uppercase tracking-tight text-[#0c2340]">Send Us an Email</h3>
+                </div>
+                <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                    For all enquiries, feedback, or digital partnership opportunities, please reach out to our official webmaster administration team. We aim to respond to all legitimate community and business messages within 24–48 business hours.
+                </p>
+                
+                <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-slate-50 p-5 border border-slate-100">
+                        <span class="block text-[10px] font-black uppercase tracking-wider text-slate-400 mb-1">Email Address</span>
+                        <a href="" class="text-blue-600 font-extrabold text-sm hover:underline flex items-center gap-1.5">
+                            <i data-lucide="mail" class="w-4 h-4 text-blue-500"></i>
+                            CONTACT FORM BELOW
+                        </a>
+                    </div>
+                    <div class="bg-slate-50 p-5 border border-slate-100">
+                        <span class="block text-[10px] font-black uppercase tracking-wider text-slate-400 mb-1">Office Hours</span>
+                        <div class="text-slate-800 font-bold text-sm flex items-center gap-1.5">
+                            <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                            Monday – Friday, 9:00 AM – 5:00 PM <span class="text-[10px] tracking-wider bg-slate-200 px-1.5 py-0.5 font-black uppercase">EST</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- CALL TO ACTION / GO BACK -->
+        <div class="text-center mt-12">
+<center>
+<div class="form-container body">
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="nama"></label>
+            <input placeholder="First Name" type="text" id="nama" required>
+        </div>
+        <div class="form-group">
+            <label for="email"></label>
+            <input placeholder="Email Address" type="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="pesan"></label>
+            <textarea placeholder="Message" id="pesan" rows="4" required></textarea>
+        </div>
+        <button type="submit" id="submitBtn">S U B M I T</button>
+    </form>
+    <div id="statusMessage"></div>
+</div>
+</center>          
+        </div>
+
+    </main>
+
+    <!-- FOOTER SYSTEM -->
+    <footer class="bg-white border-t border-slate-100 py-12 px-4 md:px-6 w-full">
+        <div class="max-w-3xl mx-auto flex flex-col items-center text-center space-y-8 w-full">
+            <div class="flex flex-col items-center">
+                <div class="flex items-center space-x-3 mb-2">
+                    <i data-lucide="wifi" class="w-6 h-6 text-blue-600"></i>
+                    <span class="font-black text-xl tracking-tighter text-[#0c2340] uppercase italic">WiFiNYC.app</span>
+                </div>
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-wider">
+                    Securing Urban Connectivity & Transparency
+                </p>
+            </div>
+            
+            <div class="border-t border-slate-100 pt-6 w-full text-center text-[10px] uppercase font-black tracking-widest text-slate-300">
+                &copy; 2026 INFRASTRUCTURE DIRECTORY SERVICES. ALL ASSETS PROTECTED UNDER FAIR USE.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Start Lucide Icons
+        lucide.createIcons();
+    // ⚠️ GANTI URL DI BAWAH INI DENGAN URL WEB APP DARI GOOGLE APPS SCRIPT ANDA
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzcU3x1eK--Kgm5kDHHSmVWT9zFBTpKk8Kq5zN38PCC-xsHQ3ziTB0rLdrpxOgFrq6J/exec";
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const statusMessage = document.getElementById('statusMessage');
+        
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Sending...";
+        statusMessage.innerText = "";
+
+        // Mengambil data input dan disesuaikan dengan key pada JSON.parse(e.postData.contents) di .gs
+        const formData = {
+            nama: document.getElementById('nama').value,
+            email: document.getElementById('email').value,
+            pesan: document.getElementById('pesan').value
+        };
+
+        // Mengirim data ke Google Apps Script menggunakan Fetch API
+        fetch(WEB_APP_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Diperlukan untuk menghindari masalah CORS dengan Google Apps Script Web App
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(() => {
+            // Karena menggunakan 'no-cors', kita tidak bisa membaca response JSON secara normal, 
+            // namun jika request berhasil sampai ke server, blok ini akan dieksekusi.
+            statusMessage.style.color = "green";
+            statusMessage.innerText = "Data successfully sent!";
+            document.getElementById('contactForm').reset();
+        })
+        .catch(error => {
+            statusMessage.style.color = "red";
+            statusMessage.innerText = "Data Failed to Send!";
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Submit";
+        });
+    });
+    </script>
+    
+    <script src="rels.js"></script>
+</body>
+</html>

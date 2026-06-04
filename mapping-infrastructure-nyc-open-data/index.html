@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powered by Public Data: Mapping Digital Infrastructure with NYC Open Data API | WiFiNYC.app</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --nyc-navy: #0c2340;
+            --nyc-blue: #3b82f6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfdfe;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="text-slate-900 leading-relaxed antialiased min-h-screen flex flex-col">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="w-full bg-[#0c2340] text-white shadow-xl border-b border-white/5 py-6 md:py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center space-x-4 md:space-x-6">
+                <a href="../guide.html" class="bg-blue-600 p-2.5 rounded-none shadow-[0_10px_25px_rgba(37,99,235,0.4)] ring-4 ring-blue-500/10 hover:bg-blue-700 transition-all">
+                    <i data-lucide="arrow-left" class="w-5 h-5 text-white"></i>
+                </a>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-black tracking-tighter leading-none italic uppercase">
+                        <span class="text-white">WiFiNYC.app</span>
+                    </h1>
+                    <p class="text-[9px] text-slate-400 uppercase tracking-[0.3em] font-black mt-1">Independent Public Directory</p>
+                </div>
+            </div>
+            
+            <a href="../" class="text-white hover:text-blue-400 transition-all font-black uppercase text-xs tracking-widest flex items-center gap-1.5">
+                <i data-lucide="home" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN BODY SECTION -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 py-12 sm:py-20">
+        
+        <!-- INTRO HERO CARD -->
+        <div class="bg-[#0c2340] text-white p-8 sm:p-14 mb-12 rounded-none shadow-2xl relative overflow-hidden border border-white/5">
+            <div class="absolute -top-10 -right-10 w-48 h-48 bg-blue-500 rounded-none blur-[90px] opacity-20"></div>
+            <div class="relative z-10">
+                <div class="inline-flex items-center px-3 py-1 bg-blue-600/30 text-blue-300 text-[10px] font-black uppercase tracking-widest mb-6 border border-blue-500/20 italic">
+                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-none mr-2"></span>
+                    Open Government API & Database Schema
+                </div>
+                <h2 class="text-2xl sm:text-5xl font-black tracking-tight leading-none uppercase italic mb-4">
+                    mapping infrastructure
+                </h2>
+                <div class="text-slate-400 font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4 text-blue-400"></i>
+                    <span>Last Updated: May 20, 2026</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ARTICLE CONTAINER -->
+        <div class="bg-white border border-slate-200/85 shadow-xl shadow-slate-100/50 p-6 sm:p-12 space-y-10">
+            
+            <!-- HEADER -->
+            <div class="border-b border-slate-100 pb-6">
+                <h1 class="text-2xl md:text-4xl font-black text-[#0c2340] tracking-tight uppercase italic leading-none mb-4">
+                    Powered by Public Data: Mapping Digital Infrastructure with NYC Open Data API
+                </h1>
+                <div class="flex items-center gap-2 text-slate-400 font-bold text-[10px] uppercase tracking-wider">
+                    <i data-lucide="database" class="w-4 h-4 text-blue-500"></i>
+                    <span>Socrata integration templates, Endpoint ID s4kf-3yrf coordinates, and DoITT mapping layers</span>
+                </div>
+            </div>
+
+            <!-- INTRO PARAGRAPHS -->
+            <div class="space-y-4 text-slate-600 text-sm md:text-base leading-relaxed">
+                <p>
+                    <strong class="text-slate-800 font-black">The big picture:</strong> New York City operates an ecosystem of deep structural transparency. The geographic layout tracking on WiFiNYC.app functions natively by authenticating directly with the official city server catalog, allowing software developers and researchers to analyze public telecommunication nodes via open data infrastructure.
+                </p>
+                <p>
+                    <strong class="text-slate-800 font-black">Why it matters for locals:</strong> Public utility databases remove the obscurity from tracking urban expansion pipelines. Accessing live government API systems lets developers build predictive transit tools, confirm neighborhood hardware equity, and map out active sidewalk 5G assets across the five boroughs without navigating bureaucratic red tape.
+                </p>
+                <p>
+                    <strong class="text-slate-800 font-black">The API Manual:</strong> This technical brief outlines the core data fetch frameworks and database fields backing the city's open tracking grid. We break down the digital schema layout to optimize your native application pipelines and spatial integrations.
+                </p>
+            </div>
+
+            <!-- ADSENSE IN-ARTICLE RESPONSIVE UNIT 1 -->
+            <div class="w-full my-8 bg-slate-50 border border-slate-100 p-4">
+                <div class="adsense-box w-full h-[120px] shadow-inner flex flex-col items-center justify-center p-4 text-center">
+                    <i data-lucide="image" class="w-6 h-6 opacity-20 mb-2 animate-pulse text-blue-600"></i>
+                    <span class="text-[8px] font-black uppercase tracking-widest text-[#3b82f6]/50">Sponsor Link Node (Display Responsive Unit 1)</span>
+                    <span class="text-[7.5px] opacity-35 uppercase tracking-[0.3em] mt-1 max-w-[280px] leading-tight font-medium">Auto-Optimize Banner Delivery Powered by High-CPM Context</span>
+                </div>
+            </div>
+
+            <hr class="border-slate-100">
+
+            <!-- NAVIGATING PUBLIC CATALOG -->
+            <div class="space-y-6">
+                <h2 class="text-xl md:text-2xl font-black text-[#0c2340] uppercase italic tracking-tight flex items-center gap-2">
+                    <span class="w-1.5 h-6 bg-blue-600 inline-block"></span>
+                    Navigating the Public Catalog: Tools for Civic Engineers
+                </h2>
+                
+                <div class="space-y-4 text-slate-600 text-sm md:text-base leading-relaxed">
+                    <p>
+                        <strong class="text-slate-800 font-black">The backend backbone:</strong> The central municipal data warehouse acts as a massive public registry, housing thousands of clean datasets updated dynamically by dozens of city agencies.
+                    </p>
+                    
+                    <div class="bg-slate-50 border border-slate-105 p-6 space-y-4 my-4">
+                        <span class="inline-block bg-[#0c2340] text-white text-[8px] font-black uppercase tracking-wider px-2 py-0.5 rounded-none">Civic API Integration</span>
+                        <h4 class="font-black text-xs uppercase text-[#0c2340] tracking-wider">Key Integration Metrics:</h4>
+                        <ul class="space-y-3 pl-0 list-none">
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="network" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i>
+                                <span><strong class="text-slate-900 font-extrabold">Socrata Open Data API (SODA):</strong> Every infrastructure database features a native REST API endpoint, allowing software applications to execute direct JSON or XML queries.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="sliders" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i>
+                                <span><strong class="text-slate-900 font-extrabold">Automated Data Parameters:</strong> The cloud data console allows programmers to apply granular column filtering, SQL-like sorting rules, and rapid text queries natively.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="file-output" class="w-4 h-4 text-blue-600 shrink-0 mt-0.5"></i>
+                                <span><strong class="text-slate-900 font-extrabold">Export Versatility:</strong> Developers can parse data streams instantly into structured local file formats including CSV, JSON, GeoJSON, and XML.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADSENSE IN-ARTICLE RESPONSIVE UNIT 2 -->
+            <div class="w-full my-8 bg-slate-50 border border-slate-100 p-4">
+                <div class="adsense-box w-full h-[120px] shadow-inner flex flex-col items-center justify-center p-4 text-center">
+                    <i data-lucide="image" class="w-6 h-6 opacity-20 mb-2 animate-pulse text-[#0c2340]"></i>
+                    <span class="text-[8px] font-black uppercase tracking-widest text-[#0c2340]/50">Sponsor Link Node (Display Responsive Unit 2)</span>
+                    <span class="text-[7.5px] opacity-35 uppercase tracking-[0.3em] mt-1 max-w-[280px] leading-tight font-medium">Contextual Billboard Delivery Yielding Maximum Local CTR</span>
+                </div>
+            </div>
+
+            <hr class="border-slate-100">
+
+            <!-- LOCATING TELECOMMUNICATIONS DATA -->
+            <div class="space-y-6">
+                <h2 class="text-xl md:text-2xl font-black text-[#0c2340] uppercase italic tracking-tight flex items-center gap-2">
+                    <span class="w-1.5 h-6 bg-blue-600 inline-block"></span>
+                    Locating Telecommunications and Kiosk Asset Data
+                </h2>
+
+                <div class="space-y-4 text-slate-600 text-sm md:text-base leading-relaxed">
+                    <p>
+                        <strong class="text-slate-800 font-black">Under the hood:</strong> The real-time mapping engine on this platform queries specific database identifiers managed by the Department of Information Technology and Telecommunications (DoITT).
+                    </p>
+                    <ul class="space-y-4 pl-0 list-none">
+                        <li class="flex items-start gap-2.5">
+                            <i data-lucide="code-2" class="w-5 h-5 text-green-600 shrink-0 mt-0.5"></i>
+                            <span><strong class="text-slate-900 font-extrabold block">Dataset Identifier "s4kf-3yrf"</strong> This specific live catalog endpoint houses the verified coordinates, street locations, and active deployment states for thousands of sidewalk kiosks.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-green-600 shrink-0 mt-0.5"></i>
+                            <span><strong class="text-slate-900 font-extrabold block">Geographic Mapping Layers</strong> The portal integrates native shapefiles and latitude/longitude strings, allowing spatial analysts to track infrastructure growth across specific Manhattan blocks.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i data-lucide="refresh-cw" class="w-5 h-5 text-blue-600 shrink-0 mt-0.5"></i>
+                            <span><strong class="text-slate-900 font-extrabold block">Update Latency</strong> Automated script pipelines push live field data to the portal weekly, ensuring high accuracy for third-party mapping software.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ADSENSE IN-ARTICLE RESPONSIVE UNIT 3 -->
+            <div class="w-full my-8 bg-slate-50 border border-slate-100 p-4">
+                <div class="adsense-box w-full h-[120px] shadow-inner flex flex-col items-center justify-center p-4 text-center">
+                    <i data-lucide="image" class="w-6 h-6 opacity-20 mb-2 animate-pulse text-blue-600"></i>
+                    <span class="text-[8px] font-black uppercase tracking-widest text-[#3b82f6]/50">Sponsor Link Node (Display Responsive Unit 3)</span>
+                    <span class="text-[7.5px] opacity-35 uppercase tracking-[0.3em] mt-1 max-w-[280px] leading-tight font-medium">Adaptive Overlay Program Optimizing Visual Match & Yield</span>
+                </div>
+            </div>
+
+            <hr class="border-slate-100">
+
+            <!-- HARNESSING PUBLIC ASSETS -->
+            <div class="space-y-6">
+                <h2 class="text-xl md:text-2xl font-black text-[#0c2340] uppercase italic tracking-tight flex items-center gap-2">
+                    <span class="w-1.5 h-6 bg-blue-600 inline-block"></span>
+                    Harnessing Public Infrastructure Assets Natively
+                </h2>
+
+                <div class="space-y-4 text-slate-600 text-sm md:text-base leading-relaxed">
+                    <p>
+                        <strong class="text-slate-800">The bottom line:</strong> Utilizing open government APIs serves as a powerful democratic engine, giving creators the precise code baselines required to construct independent urban utilities that benefit all New Yorkers.
+                    </p>
+                    
+                    <!-- SILO LINK ARCHITECTURE SECTOR E -->
+                    <div class="mt-8 bg-slate-50 border border-slate-205 p-6 rounded-none">
+                        <p class="text-xs text-slate-500 font-semibold italic">
+                            To view the comprehensive geographical distribution of these public assets, review our detailed guide on <a href="/linknyc-locations-complete-directory/" class="text-blue-600 font-extrabold hover:underline">nyc directory</a> listings. To return to the main dashboard interface and engage the live interactive tracker, open our <a href="https://WiFiNYC.app" class="text-blue-600 font-extrabold hover:underline">locator engine</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER SYSTEM -->
+    <footer class="bg-white border-t border-slate-100 py-12 px-4 md:px-6 w-full">
+        <div class="max-w-3xl mx-auto flex flex-col items-center text-center space-y-8 w-full">
+            <div class="flex flex-col items-center">
+                <div class="flex items-center space-x-3 mb-2">
+                    <i data-lucide="wifi" class="w-6 h-6 text-blue-600"></i>
+                    <span class="font-black text-xl tracking-tighter text-[#0c2340] uppercase italic">WiFiNYC.app</span>
+                </div>
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-wider">
+                    Securing Urban Connectivity & Transparency
+                </p>
+            </div>
+            
+            <div class="border-t border-slate-100 pt-6 w-full text-center text-[10px] uppercase font-black tracking-widest text-[#0c2340]/20">
+                &copy; 2026 INFRASTRUCTURE DIRECTORY SERVICES. ALL ASSETS PROTECTED UNDER FAIR USE.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Start Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

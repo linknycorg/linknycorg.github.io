@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | WiFiNYC.app Directory</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --nyc-navy: #0c2340;
+            --nyc-blue: #3b82f6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfdfe;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        -webkit-user-select: none;  /* Safari */
+        -moz-user-select: none;     /* Firefox */
+        -ms-user-select: none;      /* IE 10+ dan Edge */
+        user-select: none;          /* Standar standar (Chrome, Opera) */
+    </style>
+</head>
+<body class="text-slate-900 leading-relaxed antialiased min-h-screen flex flex-col">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="w-full bg-[#0c2340] text-white shadow-xl border-b border-white/5 py-6 md:py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center space-x-4 md:space-x-6">
+                <a href="." class="bg-blue-600 p-2.5 rounded-none shadow-[0_10px_25px_rgba(37,99,235,0.4)] ring-4 ring-blue-500/10 hover:bg-blue-700 transition-all">
+                    <i data-lucide="arrow-left" class="w-5 h-5 text-white"></i>
+                </a>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-black tracking-tighter leading-none italic uppercase">
+                        <span class="text-white">WiFiNYC.app</span>
+                    </h1>
+                    <p class="text-[9px] text-slate-400 uppercase tracking-[0.3em] font-black mt-1">Independent Public Directory</p>
+                </div>
+            </div>
+            
+            <a href="." class="text-white hover:text-blue-400 transition-all font-black uppercase text-xs tracking-widest flex items-center gap-1.5">
+                <i data-lucide="home" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN BODY SECTION -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 py-12 sm:py-20">
+        
+        <!-- INTRO HERO CARD -->
+        <div class="bg-[#0c2340] text-white p-8 sm:p-14 mb-12 rounded-none shadow-2xl relative overflow-hidden border border-white/5">
+            <div class="absolute -top-10 -right-10 w-48 h-48 bg-blue-500 rounded-none blur-[90px] opacity-20"></div>
+            <div class="relative z-10">
+                <div class="inline-flex items-center px-3 py-1 bg-blue-600/30 text-blue-300 text-[10px] font-black uppercase tracking-widest mb-6 border border-blue-500/20 italic">
+                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-none mr-2"></span>
+                    Community Initiative
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-none uppercase italic mb-4">
+                    About Our Platform
+                </h2>
+                <div class="text-slate-400 font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4 text-blue-400"></i>
+                    <span>Last Updated: May 20, 2026</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DETAILED ABOUT CONTENTS -->
+        <div class="bg-white border border-slate-100 shadow-xl shadow-slate-100/50 p-6 sm:p-12 space-y-12">
+            
+            <!-- SECTION 1 -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                    <span class="text-blue-600 bg-blue-50 p-1.5 text-xs font-black uppercase">01</span>
+                    <h3 class="text-lg font-black uppercase tracking-tight text-[#0c2340]">Our Mission: Empowering Urban Connectivity</h3>
+                </div>
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
+                    <strong class="text-slate-800">WiFiNYC.app</strong> is a standalone, mobile-first web directory dedicated to mapping and monitoring the digital evolution of New York City. Our mission is simple: to provide NYC residents, commuters, and tourists with an instant, high-utility visual tool to locate free public Wi-Fi kiosks, high-speed Link5G smart poles, and charging stations across all five boroughs.
+                </p>
+            </section>
+
+            <!-- SECTION 2 -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                    <span class="text-blue-600 bg-blue-50 p-1.5 text-xs font-black uppercase">02</span>
+                    <h3 class="text-lg font-black uppercase tracking-tight text-[#0c2340]">Why It Matters: Smart Brevity for Commuters</h3>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-6 pt-2">
+                    <div class="bg-slate-50 p-6 border-l-4 border-slate-400 rounded-none">
+                        <h4 class="font-black text-xs uppercase tracking-wider text-slate-800 mb-2 flex items-center gap-1.5">
+                            <i data-lucide="trending-up" class="w-4 h-4 text-slate-505"></i>
+                            The Big Picture
+                        </h4>
+                        <p class="text-xs text-slate-500 leading-relaxed font-semibold">
+                            New York City is a fast-paced metropolis where staying connected is essential for work, transit, and safety. However, mobile data caps, underground signal drops, and battery emergencies can disrupt your daily routine.
+                        </p>
+                    </div>
+                    <div class="bg-blue-50/50 p-6 border-l-4 border-blue-500 rounded-none">
+                        <h4 class="font-black text-xs uppercase tracking-wider text-blue-900 mb-2 flex items-center gap-1.5">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i>
+                            The Solution
+                        </h4>
+                        <p class="text-xs text-slate-600 leading-relaxed font-semibold">
+                            Our independent platform bridges the gap by transforming raw municipal infrastructure data into a clean, interactive, and mobile-optimized locator app. We help you find free gigabit internet access within walking distance, wherever you are in the city.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3 -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                    <span class="text-blue-600 bg-blue-50 p-1.5 text-xs font-black uppercase">03</span>
+                    <h3 class="text-lg font-black uppercase tracking-tight text-[#0c2340]">Tech Stack & Native Infrastructure</h3>
+                </div>
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
+                    We believe in fast loading times and absolute transparency. This application does not use heavy external tracking frameworks or illegal content frames.
+                </p>
+                <div class="grid sm:grid-cols-3 gap-4 pt-2">
+                    <div class="bg-slate-50 p-5 rounded-none border border-slate-100">
+                        <div class="flex justify-between items-start mb-3">
+                            <i data-lucide="zap" class="w-5 h-5 text-amber-500"></i>
+                            <span class="text-[9px] font-black uppercase tracking-widest text-slate-400">Socrata API</span>
+                        </div>
+                        <h4 class="font-black text-xs uppercase tracking-wider text-[#0c2340] mb-2">Real-Time Data</h4>
+                        <p class="text-[11px] text-slate-500 leading-relaxed font-semibold">
+                            Our map infrastructure communicates directly with the official NYC Open Data live catalog via native API authentication. This ensures that the thousands of active nodes displayed on your screen are accurate and updated.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-none border border-slate-100">
+                        <div class="flex justify-between items-start mb-3">
+                            <i data-lucide="gauge" class="w-5 h-5 text-emerald-500"></i>
+                            <span class="text-[9px] font-black uppercase tracking-widest text-slate-400">optimized</span>
+                        </div>
+                        <h4 class="font-black text-xs uppercase tracking-wider text-[#0c2340] mb-2">High Performance</h4>
+                        <p class="text-[11px] text-slate-500 leading-relaxed font-semibold">
+                            By leveraging vanilla JavaScript and optimized marker clustering algorithms, this app runs smoothly on any mobile browser, ensuring commuters can load the map in less than a second while walking down Manhattan or Brooklyn.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-none border border-slate-100">
+                        <div class="flex justify-between items-start mb-3">
+                            <i data-lucide="smartphone" class="w-5 h-5 text-purple-500"></i>
+                            <span class="text-[9px] font-black uppercase tracking-widest text-slate-400">offline-first</span>
+                        </div>
+                        <h4 class="font-black text-xs uppercase tracking-wider text-[#0c2340] mb-2">PWA Integration</h4>
+                        <p class="text-[11px] text-slate-500 leading-relaxed font-semibold">
+                            Our built-in Progressive Web App (PWA) technology allows you to save this tool directly to your device with 0 MB of hardware storage, keeping the map functional even when you encounter transit dead-zones.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4 -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                    <span class="text-blue-600 bg-blue-50 p-1.5 text-xs font-black uppercase">04</span>
+                    <h3 class="text-lg font-black uppercase tracking-tight text-[#0c2340]">Independent Public Initiative (Disclaimer)</h3>
+                </div>
+                <div class="space-y-4 text-slate-600 text-base leading-relaxed">
+                    <div class="p-6 border-2 border-dashed border-red-200 bg-red-50/25 rounded-none">
+                        <strong class="text-red-900 block font-black uppercase text-xs tracking-wider mb-2 flex items-center gap-1.5">
+                            <i data-lucide="shield-alert" class="w-4 h-4 text-red-600"></i>
+                            Statement of Independence
+                        </strong>
+                        WiFiNYC.app is an entirely independent, privately-owned public utility directory. We are NOT owned, operated, legally affiliated with, or endorsed by the City of New York, CityBridge LLC, DoITT, or the official LinkNYC brand.
+                    </div>
+                    <p class="font-normal text-slate-600">
+                        <strong class="text-slate-800">Community Focused:</strong> This platform was built out of a passion for urban technology and open data. All product names, logos, and brands displayed on the map are property of their respective owners and are used here purely for geographic identification and community utility purposes.
+                    </p>
+                </div>
+            </section>
+
+            <!-- SECTION 5 -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                    <span class="text-blue-600 bg-blue-50 p-1.5 text-xs font-black uppercase">05</span>
+                    <h3 class="text-lg font-black uppercase tracking-tight text-[#0c2340]">Support and Webmaster Transparency</h3>
+                </div>
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
+                    This platform is maintained by a dedicated team of digital marketers and web developers who believe in free, democratic access to public information. We sustain our infrastructure through non-intrusive, compliant advertisement networks to ensure the directory remains 100% free for the community.
+                </p>
+            </section>
+
+            <!-- SECTION 6 -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                    <span class="text-blue-600 bg-blue-50 p-1.5 text-xs font-black uppercase">06</span>
+                    <h3 class="text-lg font-black uppercase tracking-tight text-[#0c2340]">Get in Touch</h3>
+                </div>
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
+                    We continuously improve our mapping data and layout interface. If you find a kiosk location anomaly, status inaccuracy, or want to suggest a feature update, please contact our webmaster administration through the main navigation panel dashboard.
+                </p>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER SYSTEM -->
+    <footer class="bg-white border-t border-slate-100 py-12 px-4 md:px-6 w-full">
+        <div class="max-w-3xl mx-auto flex flex-col items-center text-center space-y-8 w-full">
+            <div class="flex flex-col items-center">
+                <div class="flex items-center space-x-3 mb-2">
+                    <i data-lucide="wifi" class="w-6 h-6 text-blue-600"></i>
+                    <span class="font-black text-xl tracking-tighter text-[#0c2340] uppercase italic">WiFiNYC.app</span>
+                </div>
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-wider">
+                    Securing Urban Connectivity & Transparency
+                </p>
+            </div>
+            
+            <div class="border-t border-slate-100 pt-6 w-full text-center text-[10px] uppercase font-black tracking-widest text-slate-300">
+                &copy; 2026 INFRASTRUCTURE DIRECTORY SERVICES. ALL ASSETS PROTECTED UNDER FAIR USE.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Start Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
