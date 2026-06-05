@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     adContainer.innerHTML = `
     <div class="fixed bottom-0 left-0 right-0 md:bottom-6 md:right-6 md:left-auto z-[2000] group max-w-full md:max-w-sm">
         <div class="bg-purple-950/95 backdrop-blur-xl border-x border-t md:border border-purple-500/30 shadow-[0_-10px_40px_rgba(88,28,135,0.2)] md:shadow-[0_20px_50px_rgba(88,28,135,0.3)] rounded-none p-1.5 md:p-1 flex items-center pr-4 md:pr-6 overflow-hidden transition-all duration-500 hover:shadow-[0_25px_60px_rgba(168,85,247,0.4)]">
-        <a href="../sly" class="flex items-center flex-grow min-w-0 text-decoration-none" onclick="this.parentElement.parentElement.style.display='none'">
+        <a href="../sly" rel="nofollow" class="flex items-center flex-grow min-w-0 text-decoration-none" onclick="this.parentElement.parentElement.style.display='none'">
             <div class="w-10 h-10 md:w-12 md:h-12 bg-purple-600 rounded-none flex items-center justify-center text-white mr-3 md:mr-4 shadow-inner flex-shrink-0">
                 <i data-lucide="award" class="w-5 h-5 md:w-6 md:h-6"></i>
             </div>
