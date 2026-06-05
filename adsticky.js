@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <span class="text-xs md:text-sm font-bold text-white leading-tight mb-1 truncate md:whitespace-normal line-clamp-2">Get Premium e-Sim Instantly</span>
                 <div class="flex items-center space-x-2">
                     <span class="text-[9px] bg-emerald-500 text-emerald-950 px-1.5 py-0.5 rounded-none font-black uppercase tracking-wider leading-none">SAVE 35%</span>
-                    <span class="text-[10px] text-purple-200 font-bold">SCORE35</span>
+                    <span class="text-[10px] text-purple-200 font-bold">SCORE35 Earn Up to $100</span>
                 </div>
             </div>
         </a>
