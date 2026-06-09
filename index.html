@@ -22,57 +22,154 @@
     <meta name="twitter:image" content="https://wifinyc.app/og-image.jpg"> 
 
     <!-- Schema Markup JSON-LD MUTAKHIR (Kombinasi Otoritas Multi-Entitas) -->
-    <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type":"Organization",
+      "@id":"https://wifinyc.app/#organization",
+      "name":"WiFiNYC.app",
+      "url":"https://wifinyc.app",
+      "logo":"https://wifinyc.app/images/logo.png",
+      "description":"Independent directory and map of LinkNYC kiosks, Link5G smart poles, and free public WiFi locations across New York City.",
+      "areaServed":{
+        "@type":"AdministrativeArea",
+        "name":"New York City"
+      },
+      "sameAs":[
+        "https://link.nyc/",
+        "https://en.wikipedia.org/wiki/LinkNYC"
+      ]
+    },
+
+    {
+      "@type":"WebSite",
+      "@id":"https://wifinyc.app/#website",
+      "url":"https://wifinyc.app",
+      "name":"WiFiNYC.app",
+      "publisher":{
+        "@id":"https://wifinyc.app/#organization"
+      },
+      "description":"Interactive directory, map, and information resource for LinkNYC kiosks, Link5G smart poles, Free WiFi NYC locations, and public internet access points throughout New York City.",
+      "inLanguage":"en-US"
+    },
+
+    {
+      "@type":"CollectionPage",
+      "@id":"https://wifinyc.app/#directory",
+      "url":"https://wifinyc.app",
+      "name":"NYC Free WiFi Directory & LinkNYC Map",
+      "description":"Directory covering 2,256 public connectivity locations including 2,047 LinkNYC kiosks and 209 Link5G smart poles across all five boroughs of New York City.",
+      "isPartOf":{
+        "@id":"https://wifinyc.app/#website"
+      },
+      "mainEntity":{
+        "@id":"https://wifinyc.app/#dataset"
+      },
+      "about":[
         {
-          "@type": "WebApplication",
-          "@id": "https://wifinyc.app",
-          "url": "https://wifinyc.app",
-          "name": "WiFiNYC",
-          "applicationCategory": "UtilitiesApplication",
-          "operatingSystem": "All",
-          "browserRequirements": "Requires HTML5, JavaScript",
-          "description": "Real-time interactive map locator for free public WiFi hotspots, street kiosks, and municipal internet hubs across New York City.",
-          "maintainer": {
-            "@type": "Organization",
-            "name": "WiFiNYC Digital Team",
-            "url": "https://wifinyc.app"
-          }
+          "@type":"Thing",
+          "name":"LinkNYC"
         },
         {
-          "@type": "AdministrativeArea",
-          "@id": "https://wikipedia.org",
-          "name": "New York City",
-          "alternateName": "NYC",
-          "containsPlace": [
-            { "@type": "AdministrativeArea", "name": "Manhattan" },
-            { "@type": "AdministrativeArea", "name": "Brooklyn" },
-            { "@type": "AdministrativeArea", "name": "Queens" },
-            { "@type": "AdministrativeArea", "name": "The Bronx" },
-            { "@type": "AdministrativeArea", "name": "Staten Island" }
-          ]
+          "@type":"Thing",
+          "name":"Link5G"
         },
         {
-          "@type": "Guide",
-          "@id": "https://wifinyc.app",
-          "name": "NYC Free WiFi Directory & Live Map",
-          "about": [
-            {
-              "@type": "Thing",
-              "name": "LinkNYC",
-              "sameAs": "https://wikipedia.org"
-            }
-          ],
-          "abstract": "Comprehensive interactive map tracking 2,256 active free public internet nodes in New York City, featuring 2,047 LinkNYC Gigabit Hotspots and 209 Link5G Smart Poles across all 5 boroughs.",
-          "spatialCoverage": {
-            "@id": "https://wikipedia.org"
-          }
+          "@type":"Thing",
+          "name":"Free WiFi NYC"
+        },
+        {
+          "@type":"Thing",
+          "name":"Public WiFi NYC"
+        },
+        {
+          "@type":"Thing",
+          "name":"Free Internet NYC"
         }
       ]
+    },
+
+    {
+      "@type":"WebApplication",
+      "@id":"https://wifinyc.app/#application",
+      "name":"WiFiNYC.app",
+      "url":"https://wifinyc.app",
+      "applicationCategory":"UtilitiesApplication",
+      "operatingSystem":"Any",
+      "browserRequirements":"HTML5",
+      "description":"Interactive map and locator for LinkNYC kiosks, Link5G smart poles, and free public internet access locations across New York City.",
+      "provider":{
+        "@id":"https://wifinyc.app/#organization"
+      }
+    },
+
+    {
+      "@type":"Dataset",
+      "@id":"https://wifinyc.app/#dataset",
+      "name":"New York City Public Connectivity Directory",
+      "description":"Structured directory of LinkNYC kiosks, Link5G smart poles, public WiFi locations, and free internet access points across New York City.",
+      "creator":{
+        "@id":"https://wifinyc.app/#organization"
+      },
+      "spatialCoverage":{
+        "@type":"AdministrativeArea",
+        "name":"New York City"
+      },
+      "measurementTechnique":"Directory aggregation and geographic location indexing",
+      "variableMeasured":[
+        {
+          "@type":"PropertyValue",
+          "name":"Locations Indexed",
+          "value":"2256"
+        },
+        {
+          "@type":"PropertyValue",
+          "name":"LinkNYC Kiosks",
+          "value":"2047"
+        },
+        {
+          "@type":"PropertyValue",
+          "name":"Link5G Smart Poles",
+          "value":"209"
+        },
+        {
+          "@type":"PropertyValue",
+          "name":"NYC Boroughs Covered",
+          "value":"5"
+        }
+      ],
+      "distribution":{
+        "@type":"DataDownload",
+        "encodingFormat":"text/html",
+        "contentUrl":"https://wifinyc.app"
+      },
+      "dateModified":"2026-06-01",
+      "keywords":[
+        "LinkNYC",
+        "NYC Link",
+        "LinkNYC Map",
+        "LinkNYC Kiosks",
+        "Free WiFi NYC",
+        "Public WiFi NYC",
+        "Free Internet NYC",
+        "Link5G"
+      ]
+    },
+    {
+        "@type":"ItemList",
+        "@id":"https://wifinyc.app/wifi-list#itemlist",
+        "url":"https://wifinyc.app/wifi-list",
+        "name":"WiFiNYC Complete Free NYC WiFi Directory",
+        "description":"Directory of 2,256 public connectivity locations including LinkNYC kiosks, Link5G smart poles, and Free WiFi NYC access points across all five boroughs of New York City.",
+        "numberOfItems":2256
     }
-    </script>
+
+  ]
+}
+</script>
 
     <!-- PWA Setup -->
     <link rel="manifest" href="manifest.json">
