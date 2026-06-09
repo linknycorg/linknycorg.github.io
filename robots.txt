@@ -1,0 +1,63 @@
+# =========================
+# WiFiNYC.app Robots.txt
+# Optimized for SEO + AI Crawlers + Programmatic Pages
+# =========================
+
+User-agent: *
+Allow: /
+
+# Block non-essential system pages
+Disallow: /terms/
+Disallow: /privacy/
+Disallow: /404/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /login/
+Disallow: /search?*
+Disallow: /*?q=*
+Disallow: /*?search=*
+
+# Prevent crawl traps / duplicate parameter URLs
+Disallow: /*?*
+Allow: /*?page=
+
+# =========================
+# AI / LLM CRAWLERS ACCESS
+# =========================
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Optional: allow future AI crawlers broadly
+User-agent: *
+Allow: /guide/
+Allow: /wifi-list/
+Allow: /manhattan/
+Allow: /brooklyn/
+Allow: /queens/
+Allow: /bronx/
+Allow: /staten-island/
+
+# =========================
+# SITEMAP
+# =========================
+
+Sitemap: https://wifinyc.app/sitemap.xml
