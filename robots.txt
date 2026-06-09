@@ -10,10 +10,10 @@ Allow: /*?page=
 # Blokir perangkap crawl / parameter URL duplikat lainnya
 Disallow: /*?*
 # Blokir halaman sistem non-esensial
-Disallow: /404/
-Disallow: /api/
-Disallow: /admin/
-Disallow: /login/
+Disallow: /404
+Disallow: /images/
+Disallow: /sly/
+Disallow: /vpn/
 Disallow: /search?*
 Disallow: /*?q=*
 Disallow: /*?search=*
