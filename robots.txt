@@ -1,15 +1,12 @@
-# ==========================================
-# WiFiNYC.app Robots.txt
-# Optimized for SEO + AI Crawlers + Programmatic Pages
-# ==========================================
+User-agent: Googlebot
+Disallow: /nogooglebot/
 
-# 1. ATURAN UMUM UNTUK SEMUA BOT (Termasuk Googlebot, Bingbot, dll)
 User-agent: *
-# Prioritaskan izin parameter paginasi terlebih dahulu
+
 Allow: /*?page=
-# Blokir perangkap crawl / parameter URL duplikat lainnya
+
 Disallow: /*?*
-# Blokir halaman sistem non-esensial
+
 Disallow: /404
 Disallow: /images/
 Disallow: /sly/
@@ -17,12 +14,8 @@ Disallow: /vpn/
 Disallow: /search?*
 Disallow: /*?q=*
 Disallow: /*?search=*
-# Izinkan akses penuh ke sisa halaman web
-Allow: /
 
-# ==========================================
-# AKSES KHUSUS AI / LLM CRAWLERS
-# ==========================================
+Allow: /
 
 User-agent: GPTBot
 Allow: /
@@ -44,9 +37,5 @@ Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
-
-# ==========================================
-# ALAMAT SITEMAP UTAMA
-# ==========================================
 
 Sitemap: https://wifinyc.app/sitemap.xml
