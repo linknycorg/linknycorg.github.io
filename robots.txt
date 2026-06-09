@@ -1,14 +1,15 @@
-# =========================
+# ==========================================
 # WiFiNYC.app Robots.txt
 # Optimized for SEO + AI Crawlers + Programmatic Pages
-# =========================
+# ==========================================
 
+# 1. ATURAN UMUM UNTUK SEMUA BOT (Termasuk Googlebot, Bingbot, dll)
 User-agent: *
-Allow: /
-
-# Block non-essential system pages
-Disallow: /terms/
-Disallow: /privacy/
+# Prioritaskan izin parameter paginasi terlebih dahulu
+Allow: /*?page=
+# Blokir perangkap crawl / parameter URL duplikat lainnya
+Disallow: /*?*
+# Blokir halaman sistem non-esensial
 Disallow: /404/
 Disallow: /api/
 Disallow: /admin/
@@ -16,14 +17,12 @@ Disallow: /login/
 Disallow: /search?*
 Disallow: /*?q=*
 Disallow: /*?search=*
+# Izinkan akses penuh ke sisa halaman web
+Allow: /
 
-# Prevent crawl traps / duplicate parameter URLs
-Disallow: /*?*
-Allow: /*?page=
-
-# =========================
-# AI / LLM CRAWLERS ACCESS
-# =========================
+# ==========================================
+# AKSES KHUSUS AI / LLM CRAWLERS
+# ==========================================
 
 User-agent: GPTBot
 Allow: /
@@ -46,18 +45,8 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Optional: allow future AI crawlers broadly
-User-agent: *
-Allow: /guide/
-Allow: /wifi-list/
-Allow: /manhattan/
-Allow: /brooklyn/
-Allow: /queens/
-Allow: /bronx/
-Allow: /staten-island/
-
-# =========================
-# SITEMAP
-# =========================
+# ==========================================
+# ALAMAT SITEMAP UTAMA
+# ==========================================
 
 Sitemap: https://wifinyc.app/sitemap.xml
