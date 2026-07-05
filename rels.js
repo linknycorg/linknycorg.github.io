@@ -280,3 +280,60 @@
         });
     }
 })();
+
+
+(function () {
+
+    const icons = [
+        {
+            rel: "icon",
+            type: "image/x-icon",
+            href: "https://wifinyc.app/images/WiFiNYC_ico.ico"
+        },
+        {
+            rel: "icon",
+            type: "image/png",
+            sizes: "48x48",
+            href: "https://wifinyc.app/images/WiFiNYC_48.png"
+        },
+        {
+            rel: "icon",
+            type: "image/png",
+            sizes: "64x64",
+            href: "https://wifinyc.app/images/WiFiNYC_64.png"
+        },
+        {
+            rel: "icon",
+            type: "image/png",
+            sizes: "128x128",
+            href: "https://wifinyc.app/images/WiFiNYC_128.png"
+        },
+        {
+            rel: "icon",
+            type: "image/png",
+            sizes: "256x256",
+            href: "https://wifinyc.app/images/WiFiNYC_256.png"
+        },
+        {
+            rel: "apple-touch-icon",
+            href: "https://wifinyc.app/images/WiFiNYC_256.png"
+        }
+    ];
+
+    // Hapus favicon lama agar tidak duplikat
+    document.querySelectorAll(
+        'link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]'
+    ).forEach(el => el.remove());
+
+    // Tambahkan favicon baru
+    icons.forEach(icon => {
+        const link = document.createElement("link");
+
+        Object.entries(icon).forEach(([key, value]) => {
+            link.setAttribute(key, value);
+        });
+
+        document.head.appendChild(link);
+    });
+
+})();
